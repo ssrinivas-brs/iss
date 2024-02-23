@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WHERE THE ISS AT | JavaScript</title>
+        <link rel="icon" href="http://203.193.173.125/buildriseshine/favicon.png" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+        <script src="https://rawgit.com/mysticatea/abort-controller/master/dist/abort-controller.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    </head>
+
+    <body>
+        <header>
+            <div class="d-flex bg-gradient">
+                <div class="d-flex flex-grow-1">
+                    <nav class="courseTitle">
+                    </nav>
+                    <div class="flex-grow-1">
+                        <div class="d-flex ps-3 align-items-center">
+                            <div class="flex-grow-1">
+                                <h4>API: Where the <span class="text-decoration-underline" data-bs-toggle="tooltip" data-bs-placement="button" title="The International Space Station (ISS) is a habitable, artificial satellite in low Earth orbit. It is a joint project between five participating space agencies, the American NASA, the Russian RSA, the Japanese JAXA, the European ESA, and the Canadian CSA. The current crew of 6 is part of Expedition 35, commanded by CSA's Chris Hadfield.">ISS</span> at</h4>
+                            </div>
+                            <div class="link me-3">
+                                <p class="mb-0 py-0">
+
+                                    <a href="https://wheretheiss.at/w/developer" target="_blank">
+                                        https://wheretheiss.at/w/developer
+                                    </a>
+                                    <img src="assets/img/noun-link.png" class="ms-2" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main role="main" class="container pt-0">
+            <div id="map"></div>
+
+            <div id="details" class="mt-0">
+                <div class="w-25"><h6 class="fw-bold">Ground Point</h6>
+                    <p>
+                        <span id="latitude"></span><br/>
+                        <span id="longitude"></span>
+                    </p>
+                </div>
+                <div class="w-25"><h6 class="fw-bold">Current Location</h6>
+                    <p id="iss_location"></p>
+                </div>
+                <div class="w-25"><h6 class="fw-bold">Speed</h6> <p id="speed"></p></div>
+                <div class="w-25"><h6 class="fw-bold">Altitude</h6> <p id="altitude"></p></div>
+                <div class="w-25"><h6 class="fw-bold">Time</h6><p><span id="utcTime"></span><br/><span id="localTime"></span></p></div>
+                <div class="w-25"><h6 class="fw-bold">Visibility</h6> <p id="visibility"></p></div>
+                <div class="w-25">
+                    <h6><span class="me-2"><input type='checkbox' class="form-check-input mt-0" id="iss_center" checked /></span>Center ISS</h6>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer footer-dark">
+            <div class="d-flex justify-content-center px-5">
+                <div>
+                    <button onclick="setTheme('#1A4B84')" class="theme-switch theme-switch-chathams_blue"></button>
+                    <button onclick="setTheme('#991E14')" class="theme-switch theme-switch-tamarillo"></button>
+                    <button onclick="setTheme('#FEAD06')" class="theme-switch theme-switch-yellow_sea"></button>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
